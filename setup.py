@@ -18,6 +18,7 @@ setup(
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
     author="Srdjan Stankovic",
+    author_email="stankovic.srdjo@gmail.com",
     url="https://github.com/pyropy/fastapi-socketio",
     project_urls={
         "Issues": "https://github.com/pyropy/fastapi-socketio/issues",
