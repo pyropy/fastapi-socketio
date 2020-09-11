@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+jedi = "*"
+neovim = "*"
+
+[packages]
+fastapi = "==0.61.1"
+netifaces = "==0.10.6"
+pydantic = "==1.6.1"
+socketio = "==0.2.1"
+starlette = "==0.13.6"
+
+[test]
+pytest = "==6.0.1"
+
+[requires]
+python_version = "3.8"
