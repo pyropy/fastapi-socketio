@@ -68,3 +68,14 @@ Now install the dependencies and tests:
 To run the tests:
 
     pytest
+
+
+## Run example
+
+To run the examples simply run:
+
+```bash
+PYTHONPATH=. python examples/app.py
+```
+
+Before running example make sure you have all dependencies installed.
