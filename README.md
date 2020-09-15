@@ -14,7 +14,40 @@ Install this plugin using `pip`:
 
 ## Usage
 
-Usage instructions go here.
+To add SocketIO support to FastAPI all you need to do is import `SocketManager` and pass it `FastAPI` object.
+
+```python
+# app.py
+from fastapi import FastAPI
+from fastapi_socketio import SocketManager
+
+app = FastAPI()
+socket_manager = SocketManager(app=app)
+```
+
+
+Now you can use SocketIO directly from your `FastAPI` app object.
+```python
+# socket_handlers.py
+from .app import app
+
+@app.sio.on('join')
+async def handle_join(sid, *args, **kwargs):
+    await app.sio.emit('lobby', 'User joined')
+
+```
+
+Or you can import `SocketManager` object that exposes most of the SocketIO functionality.
+
+```python
+# socket_handlers2.py
+from .app import socket_manager as sm
+
+@sm.on('leave')
+async def handle_leave(sid, *args, **kwargs):
+    await sm.emit('lobby', 'User left')
+
+```
 
 ## Development
 
