@@ -4,12 +4,16 @@ from fastapi import FastAPI
 
 class SocketManager:
     """
-    Creates and mounts SocketIO app to FastAPI app.
-    Default mount location for SocketIO app is "/ws".
+    Integrates SocketIO with FastAPI app. 
+    Adds `sio` property to FastAPI object (app).
 
-    Exponses basic functionality of SocketIO.
+    Default mount location for SocketIO app is at `/ws`
+    and defautl SocketIO path is `socket.io`.
+    (e.g. full path: `ws://www.example.com/ws/socket.io/)
 
-    Default socketio_path is "socket.io"
+    SocketManager exposes basic underlying SocketIO functionality
+
+    e.g. emit, on, send, call, etc.
     """
 
     def __init__(
@@ -19,7 +23,7 @@ class SocketManager:
         socketio_path: str = "socket.io",
         cors_allowed_origins: list = [],
     ) -> None:
-
+        # TODO: Change Cors policy based on fastapi cors Middleware
         self._sio = socketio.AsyncServer(async_mode="asgi", cors_allowed_origins="*")
         self._app = socketio.ASGIApp(
             socketio_server=self._sio, socketio_path=socketio_path
