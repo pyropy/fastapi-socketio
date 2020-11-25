@@ -1,4 +1,5 @@
 import socketio
+from typing import Union
 from fastapi import FastAPI
 
 
@@ -21,10 +22,10 @@ class SocketManager:
         app: FastAPI,
         mount_location: str = "/ws",
         socketio_path: str = "socket.io",
-        cors_allowed_origins: list = [],
+        cors_allowed_origins: Union[str, list] = '*',
     ) -> None:
         # TODO: Change Cors policy based on fastapi cors Middleware
-        self._sio = socketio.AsyncServer(async_mode="asgi", cors_allowed_origins="*")
+        self._sio = socketio.AsyncServer(async_mode="asgi", cors_allowed_origins=cors_allowed_origins)
         self._app = socketio.ASGIApp(
             socketio_server=self._sio, socketio_path=socketio_path
         )
