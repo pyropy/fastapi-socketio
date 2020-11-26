@@ -79,3 +79,7 @@ PYTHONPATH=. python examples/app.py
 ```
 
 Before running example make sure you have all dependencies installed.
+
+## Contributors
+
+For list of contributors please reefer to CONTRIBUTORS.md file in this repository.
