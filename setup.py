@@ -30,12 +30,7 @@ setup(
     packages=["fastapi_socketio"],
     install_requires=[
         "fastapi>=0.61.1",
-        "netifaces>=0.10.6",
-        "pydantic>=1.6.1",
-        "starlette>=0.13.6",
         "python-socketio>=4.6.0",
-        "python-engineio",
-
     ],
     extras_require={"test": ["pytest"]},
     tests_require=["fastapi-socketio[test]"],
