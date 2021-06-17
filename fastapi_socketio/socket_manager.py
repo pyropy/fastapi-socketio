@@ -1,5 +1,5 @@
 import socketio
-from typing import Union
+from typing import Optional, Union
 from fastapi import FastAPI
 
 
@@ -87,3 +87,12 @@ class SocketManager:
     @property
     def sleep(self):
         return self._sio.sleep
+
+    @property
+    def enter_room(self, sid: str, room: str, namespace: Optional[str] = None):
+        return self._sio.enter_room(sid, room, namespace)
+
+    @property
+    def leave_room(self, sid: str, room: str, namespace: Optional[str] = None):
+        return self._sio.leave_room(sid, room, namespace)
+
