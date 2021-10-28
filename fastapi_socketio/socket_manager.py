@@ -1,5 +1,6 @@
+from typing import Union
+
 import socketio
-from typing import Optional, Union
 from fastapi import FastAPI
 
 class SocketManager:
