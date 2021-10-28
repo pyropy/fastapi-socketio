@@ -89,10 +89,9 @@ class SocketManager:
         return self._sio.sleep
 
     @property
-    def enter_room(self, sid: str, room: str, namespace: Optional[str] = None):
-        return self._sio.enter_room(sid, room, namespace)
+    def enter_room(self):
+        return self._sio.enter_room
 
     @property
-    def leave_room(self, sid: str, room: str, namespace: Optional[str] = None):
-        return self._sio.leave_room(sid, room, namespace)
-
+    def leave_room(self):
+        return self._sio.leave_room
