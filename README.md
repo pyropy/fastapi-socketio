@@ -80,6 +80,12 @@ To run the examples simply run:
 PYTHONPATH=. python examples/app.py
 ```
 
+Sample socketio client run:
+
+```bash
+PYTHONPATH=. python examples/client.py
+```
+
 Before running example make sure you have all dependencies installed.
 
 ## Contributors
