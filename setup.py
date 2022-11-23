@@ -14,7 +14,7 @@ def get_long_description():
 
 setup(
     name="fastapi-socketio",
-    description="Easly integrate socket.io with your FastAPI app.",
+    description="Easily integrate socket.io with your FastAPI app.",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
     author="Srdjan Stankovic",
