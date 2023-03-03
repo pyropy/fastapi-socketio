@@ -97,3 +97,7 @@ class SocketManager:
     @property
     def leave_room(self):
         return self._sio.leave_room
+    
+    @property
+    def register_namespace(self):
+        return self._sio.register_namespace
