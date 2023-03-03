@@ -1,4 +1,6 @@
-# fastapi-socketio
+# This is forked version of fastapi-socketio
+
+For original repo visit: https://github.com/pyropy/fastapi-socketio
 
 [![PyPI](https://img.shields.io/pypi/v/fastapi-socketio.svg)](https://pypi.org/project/fastapi-socketio/)
 [![Changelog](https://img.shields.io/github/v/release/pyropy/fastapi-socketio?label=changelog)](https://github.com/pyropy/fastapi-socketio/releases)
@@ -78,8 +80,14 @@ To run the examples simply run:
 PYTHONPATH=. python examples/app.py
 ```
 
+Sample socketio client run:
+
+```bash
+PYTHONPATH=. python examples/client.py
+```
+
 Before running example make sure you have all dependencies installed.
 
 ## Contributors
 
-For list of contributors please reefer to CONTRIBUTORS.md file in this repository.
+For list of contributors please refer to CONTRIBUTORS.md file in this repository.
