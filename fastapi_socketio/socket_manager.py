@@ -33,6 +33,8 @@ class SocketManager:
         )
 
         app.mount(mount_location, self._app)
+        app.add_route(f"/{socketio_path}/", route=self._app, methods=["GET", "POST"])
+        app.add_websocket_route(f"/{socketio_path}/", self._app)
         app.sio = self._sio
 
     def is_asyncio_based(self) -> bool:
