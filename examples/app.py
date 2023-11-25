@@ -15,7 +15,6 @@ async def test(sid, *args, **kwargs):
     await sio.emit('hey', 'joe')
 
 
-
 if __name__ == '__main__':
     import logging
     import sys
@@ -25,4 +24,4 @@ if __name__ == '__main__':
 
     import uvicorn
 
-    uvicorn.run("examples.app:app", host='0.0.0.0', port=8000, reload=True, debug=False)
+    uvicorn.run("examples.app:app", host='0.0.0.0', port=8000)
