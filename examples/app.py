@@ -5,14 +5,15 @@ app = FastAPI()
 sio = SocketManager(app=app)
 
 
-@app.sio.on('join')
-async def handle_join(sid, *args, **kwargs):
-    await sio.emit('lobby', 'User joined')
+@sio.event
+async def connect(sid, *args, **kwargs):
+    print(f"[{sid}] Connected!")
+    await sio.emit('test', 'Hello world!')
 
 
 @sio.on('test')
-async def test(sid, *args, **kwargs):
-    await sio.emit('hey', 'joe')
+async def test(sid, data, **kwargs):
+    print(f'[{sid}] Message Received! >> ', data)
 
 
 if __name__ == '__main__':
@@ -24,4 +25,4 @@ if __name__ == '__main__':
 
     import uvicorn
 
-    uvicorn.run("examples.app:app", host='0.0.0.0', port=8000)
+    uvicorn.run("app:app", host='0.0.0.0', port=8000)
